@@ -1,10 +1,15 @@
 import './styles.css'
 import ProductCard from '../ProductCard'
 import { findByPrice } from '../../services/product-service'
+import { useContext } from 'react'
+import { ValueContext } from '../../utils/minValueContext'
 
 const ListProducts = () => {
 
-    const products = findByPrice(0, Number.MAX_VALUE)
+    const {minValue, maxValue} = useContext(ValueContext)
+
+    const products = findByPrice(minValue, maxValue)
+    console.log("min: " + minValue+"max "+maxValue)
 
     return (
         <div className="container">

@@ -6,7 +6,7 @@ import { ValueContext } from './utils/minValueContext'
 
 function App() {
   
-  const [minValue, setMinValue] = useState(Number.MIN_VALUE)
+  const [minValue, setMinValue] = useState(0)
   const [maxValue, setMaxValue] = useState(Number.MAX_VALUE)
 
   return (
