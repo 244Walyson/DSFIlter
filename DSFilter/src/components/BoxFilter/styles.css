@@ -1,0 +1,12 @@
+.form-box-filter{
+    width: 200px;
+}
+.form-items-filter{
+    margin: 20px 0;
+}
+.box-filter{
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--dsf-bg-color-secondary);
+}

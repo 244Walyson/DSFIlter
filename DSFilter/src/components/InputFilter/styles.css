@@ -1,0 +1,15 @@
+.input-filter input{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--dsf-bg-color-quaternary);
+}
+.input-filter ::placeholder{
+    font-size: 16px;
+    color: var(--dsf-font-color-tertiary);
+}
+
+.input-filter input:focus{
+    outline: unset;
+}

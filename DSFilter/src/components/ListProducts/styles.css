@@ -1,0 +1,9 @@
+.list-products{
+    border-radius: 5px;
+    background-color: var(--dsf-bg-color-secondary);
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.card-product-list{
+    margin: 10px 0 10px 0;
+}
