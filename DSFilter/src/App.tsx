@@ -1,15 +1,11 @@
 import './App.css'
-import BoxFilter from './components/BoxFilter'
-import Header from './components/Header'
-import ListProducts from './components/ListProducts'
+import Home from './routes/Home'
 
 function App() {
 
   return (
     <>
-     <Header></Header>
-     <BoxFilter></BoxFilter>
-     <ListProducts></ListProducts>
+     <Home></Home>
     </>
   )
 }
