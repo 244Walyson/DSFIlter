@@ -1,10 +1,15 @@
 import './styles.css'
 
-const ProductCard = () => {
+type props = {
+    name: string;
+    price: number;
+}
+
+const ProductCard = ({name, price}: props) => {
   return (
     <div className="card-product">
-        <h3>PC Gamer Pro</h3>
-        <h2>R$ 1200.00</h2>
+        <h3>{name}</h3>
+        <h2>R$ {price}</h2>
     </div>
   )
 }
