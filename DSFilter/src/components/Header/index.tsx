@@ -1,12 +1,17 @@
+import { useContext } from 'react'
 import './styles.css'
+import { ValueContext } from '../../utils/minValueContext'
 
 
 const Header = () => {
-  return (
+
+    const {productQuant} = useContext(ValueContext)
+
+    return (
     <header>
         <div className="container content-header">
         <h1>DSFilter</h1>
-        <p>6 produto(s)</p>
+        <p>{productQuant} produto(s)</p>
         </div>
     </header>
   )

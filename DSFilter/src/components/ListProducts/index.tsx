@@ -7,14 +7,21 @@ import { ProductDTO } from '../../models/ProductDTO'
 
 const ListProducts = () => {
 
-    const {minValue, maxValue, setMaxValue} = useContext(ValueContext)
+    const { minValue, maxValue, setMaxValue, setProductQuant} = useContext(ValueContext)
     const [products, setProducts] = useState<ProductDTO[]>()
+
     useEffect(() => {
         if(minValue >= maxValue){
             setMaxValue(Number.MAX_VALUE)
         }
         setProducts(findByPrice(minValue, maxValue))
     }, [maxValue, minValue])
+
+    if(!products){
+        setProductQuant(0)
+    }else{
+        setProductQuant(products.length)
+    }
 
     return (
         <div className="container">

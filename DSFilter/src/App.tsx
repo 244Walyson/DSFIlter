@@ -8,10 +8,11 @@ function App() {
   
   const [minValue, setMinValue] = useState(0)
   const [maxValue, setMaxValue] = useState(Number.MAX_VALUE)
+  const [productQuant, setProductQuant] = useState(0) 
 
   return (
     <>
-    <ValueContext.Provider value={{minValue, maxValue, setMinValue, setMaxValue}}>
+    <ValueContext.Provider value={{minValue, maxValue, setMinValue, setMaxValue, productQuant, setProductQuant}}>
      <Home></Home>
      </ValueContext.Provider>
     </>
