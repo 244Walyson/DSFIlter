@@ -1,7 +1,9 @@
 import { ProductDTO } from "../models/ProductDTO";
 
 export function findByPrice(min: number, max: number): ProductDTO[] {
-  return products
+  
+    console.log(min)
+    return products
     .filter((x) => x.price >= min && x.price <= max)
     .sort((x, y) => x.price - y.price);
 }

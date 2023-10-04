@@ -4,6 +4,7 @@ import InputFilter from '../InputFilter'
 import './styles.css'
 import { ValueContext } from '../../utils/minValueContext'
 
+
 const BoxFilter = () => {
 
     const {setMinValue, setMaxValue} = useContext(ValueContext)
