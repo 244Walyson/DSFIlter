@@ -13,9 +13,7 @@ const ListProducts = ({productsFilter}: props) => {
     const { setProductQuant } = useContext(ValueContext)
     const products = productsFilter();
 
-    if(!products){
-        setProductQuant(0)
-    }else{
+    if(products){
         setProductQuant(products.length)
     }
 

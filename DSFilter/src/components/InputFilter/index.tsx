@@ -4,9 +4,10 @@ import './styles.css'
 type props = {
     text: string;
     textFilter: (num: number)=>void;
+    minmax: () => boolean;
 }
 
-const InputFilter = ({text, textFilter}: props) => {
+const InputFilter = ({text, textFilter, minmax}: props) => {
 
     const [value, setValue] = useState<number | undefined>()
     const [borderError, setBorderError] = useState(false)
@@ -20,9 +21,15 @@ const InputFilter = ({text, textFilter}: props) => {
         if(value){
             textFilter(value)
         }
-    }, [value])
+        if(minmax()){
+            setBorderError(true)
+        }else{
+            setBorderError(false)
+        }
+    }, [value, minmax])
 
     const hanldeBorderError = (e) => {
+        console.log(minmax())
         if(value == undefined || isNaN(Number(value))){
             e.target.value = ''
             setBorderError(true)
