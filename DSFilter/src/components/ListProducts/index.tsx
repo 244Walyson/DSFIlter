@@ -1,21 +1,17 @@
 import './styles.css'
 import ProductCard from '../ProductCard'
-import { findByPrice } from '../../services/product-service'
-import { useContext, useEffect, useState } from 'react'
-import { ValueContext } from '../../utils/minValueContext'
+import { useContext } from 'react'
+import { ValueContext } from '../../utils/ValueContext'
 import { ProductDTO } from '../../models/ProductDTO'
 
-const ListProducts = () => {
+type props = {
+    productsFilter: () => ProductDTO[];
+}
 
-    const { minValue, maxValue, setMaxValue, setProductQuant} = useContext(ValueContext)
-    const [products, setProducts] = useState<ProductDTO[]>()
+const ListProducts = ({productsFilter}: props) => {
 
-    useEffect(() => {
-        if(minValue >= maxValue){
-            setMaxValue(Number.MAX_VALUE)
-        }
-        setProducts(findByPrice(minValue, maxValue))
-    }, [maxValue, minValue])
+    const { setProductQuant } = useContext(ValueContext)
+    const products = productsFilter();
 
     if(!products){
         setProductQuant(0)

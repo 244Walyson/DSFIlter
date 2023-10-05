@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import './styles.css'
-import { ValueContext } from '../../utils/minValueContext'
+import { ValueContext } from '../../utils/ValueContext'
 
 
 const Header = () => {
